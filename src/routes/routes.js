@@ -1,7 +1,7 @@
 import express from "express";
-import PropertyController from "../controllers/property.controller";
+import PropertyController from "../controllers/property.controller.js";
 
-export default router;
+const router = express.Router();
 
 router.post("/property/register", PropertyController.register);
 
@@ -16,3 +16,5 @@ router.delete("/property/:id", PropertyController.deleteById);
 
 // A rota vai atualizar o imóvel com base no seu id
 router.put("/property/:id", PropertyController.updateById);
+
+export default router;

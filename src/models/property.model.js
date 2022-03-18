@@ -17,7 +17,7 @@ const Property = sequelize.define(
       require: true,
     },
     isActive: {
-      type: DataTypes.ENUM,
+      type: DataTypes.ENUM("ativado", "desativado"),
       allowNull: false,
       require: true,
     },

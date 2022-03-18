@@ -3,10 +3,14 @@ import sequelize from "./src/db/connection.js";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import propertyRoutes from "./src/routes/routes.js";
+import Property from "./src/models/property.model.js";
 
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(propertyRoutes);
 
 app.use(
   cors({
