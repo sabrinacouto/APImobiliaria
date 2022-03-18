@@ -17,7 +17,7 @@ const Property = sequelize.define(
       require: true,
     },
     isActive: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM,
       allowNull: false,
       require: true,
     },
