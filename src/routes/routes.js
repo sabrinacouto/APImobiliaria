@@ -3,18 +3,18 @@ import PropertyController from "../controllers/property.controller.js";
 
 const router = express.Router();
 
-router.post("/property/register", PropertyController.register);
+router.post("/register", PropertyController.register);
 
 //A rota irá listar todos os imóveis registrados
-router.get("/property", PropertyController.getAllProperties);
+router.get("/", PropertyController.getAllProperties);
 
 //A rota vai listar um imóvel com base no seu id
-router.get("/property/:id", PropertyController.getById);
+router.get("/:id", PropertyController.getById);
 
 //A rota vai deletar o imóvel com base no seu id
-router.delete("/property/:id", PropertyController.deleteById);
+router.delete("/:id", PropertyController.deleteById);
 
 // A rota vai atualizar o imóvel com base no seu id
-router.put("/property/:id", PropertyController.updateById);
+router.put("/:id", PropertyController.updateById);
 
 export default router;

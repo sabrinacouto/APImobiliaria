@@ -1,28 +1,19 @@
 import * as dotenv from "dotenv";
 import sequelize from "./src/db/connection.js";
 import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import propertyRoutes from "./src/routes/routes.js";
 import Property from "./src/models/property.model.js";
+import router from "./src/routes/routes.js";
 
 const app = express();
 
-app.use(bodyParser.json());
+const port = process.env.port;
 
-app.use(propertyRoutes);
-
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(express.json());
+app.use("/property", router);
 
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-
-const port = process.env.PORT || 3000;
 
 sequelize
   .sync()

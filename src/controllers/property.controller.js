@@ -42,20 +42,20 @@ export class PropertyController {
         .json({ status: 400, message: "Não foi possivel cadastrar o imóvel" });
     }
 
-    const propertyExists = await Property.findOne({
-      where: { id: id },
-    });
+    const propertyExists = await Property.findOne({});
 
     if (propertyExists) {
       return res.status(400).json({ message: "Imóvel já existe" });
     }
 
-    const property = new Property({
+    const property = {
       title: title,
       isActive: isActive,
       state: state,
+      street: street,
       city: city,
       amountBedrooms: amountBedrooms,
+      amountBathrooms: amountBathrooms,
       amountGarage: amountGarage,
       valueCondominium: valueCondominium,
       iptu: iptu,
@@ -64,7 +64,8 @@ export class PropertyController {
       isSelling: isSelling,
       isRenting: isRenting,
       role: role,
-    });
+    };
+    console.log({ property });
 
     try {
       await Property.create(property);
