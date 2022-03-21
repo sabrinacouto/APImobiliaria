@@ -42,12 +42,6 @@ export class PropertyController {
         .json({ status: 400, message: "Não foi possivel cadastrar o imóvel" });
     }
 
-    const propertyExists = await Property.findOne({});
-
-    if (propertyExists) {
-      return res.status(400).json({ message: "Imóvel já existe" });
-    }
-
     const property = {
       title: title,
       isActive: isActive,
@@ -119,7 +113,7 @@ export class PropertyController {
     }
 
     try {
-      await Property.destroy({ where: property });
+      await Property.destroy({ where: { id: id } });
       return res
         .status(200)
         .json({ status: 200, message: "Anúncio de imóvel deletado" });
@@ -150,7 +144,7 @@ export class PropertyController {
       role,
     } = req.body;
 
-    const property = await Property.findOne({ where: { id: id } });
+    const property = await Property.findOne({ where: { id: id }, raw: true });
 
     if (!property) {
       return res.status(400).json({
@@ -178,7 +172,7 @@ export class PropertyController {
     };
 
     try {
-      await Property.update(newData, { where: property });
+      await Property.update(newData, { where: { id: id } });
       return res
         .status(200)
         .json({ status: 200, message: "O imóvel foi atualizado" });
