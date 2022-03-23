@@ -3,6 +3,7 @@ import PropertyController from "../controllers/property.controller.js";
 
 const router = express.Router();
 
+//A rota vai registrar um novo imóvel
 router.post("/register", PropertyController.register);
 
 //A rota irá listar todos os imóveis registrados
