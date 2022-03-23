@@ -103,15 +103,6 @@ export class PropertyController {
   static async deleteById(req, res) {
     const id = req.params.id;
 
-    const property = await Property.findOne({ where: { id: id } });
-
-    if (!property) {
-      return res.status(400).json({
-        status: 400,
-        message: "Imóvel não encontrado!",
-      });
-    }
-
     try {
       await Property.destroy({ where: { id: id } });
       return res
@@ -143,15 +134,6 @@ export class PropertyController {
       isRenting,
       role,
     } = req.body;
-
-    const property = await Property.findOne({ where: { id: id }, raw: true });
-
-    if (!property) {
-      return res.status(400).json({
-        status: 400,
-        message: "Imóvel não foi encontrado",
-      });
-    }
 
     const newData = {
       title,
