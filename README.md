@@ -4,25 +4,11 @@
 
 Projeto desenvolvido para a conclusão do módulo 4 na Resilia Educação.
 
-Para este projeto, foi proposto a criação de uma API para o uso de uma imobiliária, onde cada integrante do grupo ficou responsável por uma entidade.
+Para este projeto, foi proposto a criação de uma API de uma imobiliária, onde cada integrante do grupo ficou responsável por uma entidade.
 
 Neste repositório se encontra a entidade de imóveis/property.
 
 Nesta aplicação é possível registrar, listar, atualizar e deletar imóveis.
-
-## 🔮 Tecnologias utilizadas
-
-<br>
-<div align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="70" height="70">
-<img src="https://symbols.getvecta.com/stencil_85/14_javascript-horizontal.33f06c2944.png"  width="70" height="70"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg" width="70" height="70"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" width="50" height="50" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="70" height="70" />
-<br>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" width="70" height="70" />
-</div>
-<br>
 
 ## 💬 Rodando localmente
 
@@ -59,7 +45,7 @@ as requisições das rotas com a URL:
 
 **Para possuir registros no banco de dados, será necessário iniciar com a rota /property/register para registrar um novo imóvel**
 
-### 🌟 Heroku
+### Heroku
 
 Ou você pode testar as rotas da API através desse link:
 
@@ -77,7 +63,7 @@ Esta API segue o padrão REST e utiliza os verbos HTTP: GET, POST, PUT e DELETE.
   /property/register
 ```
 
-Será necessário enviar um body no formato JSON com os seguintes campos:
+Será necessário enviar um body no formato **JSON** com os seguintes campos:
 
 ```json
 {
@@ -99,9 +85,10 @@ Será necessário enviar um body no formato JSON com os seguintes campos:
 }
 ```
 
-- **Observações importantes:**
+**Observações importantes:**
+
 - É obrigátorio preencher todos os campos.
-- Os campos "isSelling" e "isRenting" são booleanos. Preencha com "1" caso a informação for true, "0" caso for false.
+- Os campos "isSelling" e "isRenting" devem ser booleanos. Preencha com "1" caso a informação for true, "0" caso for false.
 - O campo "isActive", que define o status do imóvel, só pode ser preenchido com as seguintes opções: "ativado" ou "desativado".
 - Os campos "amountBedrooms", "amountBathrooms" e "amountGarage" possuem um valor inteiro. Não os preencha como string.
 - Os campos restantes deverão ser uma string.
@@ -156,6 +143,8 @@ Será necessário enviar um body no formato JSON com os seguintes campos:
 
 #### A rota vai atualizar o imóvel com base no seu id
 
+A rota deve atualizar o imóvel com as informações passadas no body da requisição.
+
 ```http
   /property/:id
 ```
@@ -176,6 +165,18 @@ Será necessário enviar um body no formato JSON com os seguintes campos:
 }
 ```
 
+## 🔮 Tecnologias utilizadas
+
+<br>
+<div align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="70" height="70">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg" width="70" height="70"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" width="70" height="70" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="70" height="70" />
+<br>
+</div>
+<br>
+
 ## 🪐 Developer 🪐
 
-- [@SabrinaCouto](https://github.com/sabrinacouto)
+- [Sabrina Couto](https://github.com/sabrinacouto)
